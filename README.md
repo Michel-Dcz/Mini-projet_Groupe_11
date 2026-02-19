@@ -1,10 +1,16 @@
 Prompt Final utilisé
 
 Tu travailles dans le domaine de l’organisation de compétitions de tennis internationales. Ton organisation a comme activité de gérer intégralement le cycle de vie d'un tournoi professionnel, incluant la planification des matchs sur les courts, la vente de billets au public, le calcul des points pour le classement mondial, l'affectation du staff technique (arbitres, ramasseurs) et la gestion des créneaux d'entraînement des joueurs. C’est une organisation comme l’ATP (Association of Tennis Professionals), la WTA ou la Fédération Française de Tennis (FFT). Les données collectées concernent l'identité des joueurs et du staff, les caractéristiques physiques des infrastructures, les détails des transactions de billetterie, les feuilles de match et les journaux d'accès aux terrains d'entraînement. Inspire-toi des sites web officiels de l'ATP Tour (atptour.com) pour la structure des classements et du guide d'arbitrage de l'ITF (itftennis.com) suivant : Règlements officiels de l'arbitrage et du classement technique.
+
 Ton organisation veut appliquer MERISE pour concevoir un système d'information. Tu es chargé de la partie analyse, c’est-à-dire de collecter les besoins auprès de l’entreprise. Elle a fait appel à un étudiant en ingénierie informatique pour réaliser ce projet, tu dois lui fournir les informations nécessaires pour qu’il applique ensuite lui-même les étapes suivantes de conception et développement de la base de données.
+
 D’abord, établis les règles de gestions des données de ton organisation, sous la forme d'une liste à puce. Elle doit correspondre aux informations que fournit quelqu’un qui connaît le fonctionnement de l’entreprise, mais pas comment se construit un système d’information.
+
 Ensuite, à partir de ces règles, fournis un dictionnaire de données brutes avec les colonnes suivantes, regroupées dans un tableau : signification de la donnée, type, taille en nombre de caractères ou de chiffres. Il doit y avoir entre 25 et 35 données. Il sert à fournir des informations supplémentaires sur chaque donnée (taille et type) mais sans a priori sur comment les données vont être modélisées ensuite.
+
 Fournis donc les règles de gestion et le dictionnaire de données.
+
+
 
 Règles Métier
 
@@ -25,6 +31,8 @@ Billetterie : Un billet est vendu pour un court spécifique et une date précise
 Logistique d'entraînement : Les joueurs réservent des créneaux d'entraînement. Un créneau est défini par une heure de début, une heure de fin et un court assigné.
 
 Ramasseurs de balles : Une équipe de plusieurs ramasseurs est affectée à chaque match pour assister les joueurs.
+
+
 
 Dictionnaire de Données
 
