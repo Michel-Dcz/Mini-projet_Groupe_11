@@ -29,33 +29,64 @@ Ramasseurs de balles : Une équipe de plusieurs ramasseurs est affectée à chaq
 Dictionnaire de Données
 
 Signification de la donnée,Type,Taille (car.)
+
 Identifiant unique du joueur,Alphanumérique,10
+
 Nom du joueur,Texte,50
+
 Prénom du joueur,Texte,50
+
 Nationalité (Code ISO),Texte,3
+
 Date de naissance,Date,10
+
 Nombre de points au classement ATP/WTA,Numérique,6
+
 Rang mondial actuel,Numérique,4
+
 Identifiant du membre du staff,Alphanumérique,10
+
 "Rôle du staff (Arbitre, Ramasseur)",Texte,20
+
 Niveau de certification de l'arbitre,Texte,15
+
 Identifiant du court,Alphanumérique,5
+
 Nom du court,Texte,30
+
 Type de surface (ex: Terre battue),Texte,20
+
 Capacité d'accueil du court,Numérique,5
+
 Identifiant du match,Alphanumérique,12
+
 Date du match,Date,10
+
 Heure de début du match,Heure,5
+
 Score final du match (format texte),Texte,30
+
 Durée du match (en minutes),Numérique,3
+
 Identifiant du billet,Alphanumérique,15
+
 Prix du billet,Numérique (Décimal),7
+
 Numéro de siège,Alphanumérique,5
+
 Catégorie du billet,Texte,15
+
 Date de validité du billet,Date,10
+
 Identifiant du créneau d'entraînement,Alphanumérique,10
+
 Heure de début d'entraînement,Heure,5
+
 Heure de fin d'entraînement,Heure,5
+
 Point gagné par le vainqueur du match,Numérique,4
+
 "Genre du tournoi (Simple Messieurs, Double Dames, etc.)",Texte,20
+
 "État du match (Programmé, En cours, Terminé)",Texte,15
+
