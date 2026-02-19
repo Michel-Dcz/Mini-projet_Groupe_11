@@ -100,5 +100,5 @@ Point gagné par le vainqueur du match,Numérique,4
 
 
 
-!\[MCD du Mini-Projet](./MCD\_Tennis.png)
+!\[MCD du Mini-Projet](./MCD\_Mini-Projet.png)
 
