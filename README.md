@@ -84,7 +84,26 @@
 
 ### Modèle Logique des Données (MLD)
 
+```sql
 
+Pays = (Id_Pays_ISO CHAR(2), Nom_Pays VARCHAR(50));
+Staff = (Id_Staff VARCHAR(10), Nom_Staff VARCHAR(50), Prenom_Staff VARCHAR(50), Role_Staff VARCHAR(20));
+Entrainement = (Id_Entrainement VARCHAR(10), Date_Entrainement DATE, Debut_Créneau TIME, Fin_Créneau TIME);
+Arbitre = (Id_Arbitre VARCHAR(10), Certification_Arbitre VARCHAR(15), Date_Naissance DATE, Date_Premier_Match DATE, #Id_Pays_ISO, #Id_Staff);
+Ville = (Nom_Ville VARCHAR(50), #Id_Pays_ISO);
+Tournoi = (Id_Tournoi VARCHAR(10), Nom_Tournoi VARCHAR(50), Année SMALLINT, Division_Tournoi VARCHAR(20), #Nom_Ville);
+Tableau = (Id_Tableau VARCHAR(10), Nombre_Points_Max SMALLINT, Genre_Tableau VARCHAR(3), Nom_Tableau VARCHAR(20), #Id_Tournoi);
+Court = (Id_Court VARCHAR(5), Nom_Court VARCHAR(30), Capacité_Court SMALLINT, #NomVille);
+Match = (Id_Match VARCHAR(12), Résultat_Match VARCHAR(50), Type_Surface VARCHAR(20), Durée_Match REAL, Heure_Début TIME, #Id_Arbitre);
+Joueur = (Id_Joueur VARCHAR(10), Nom_Joueur VARCHAR(50), Prenom_Joueur VARCHAR(50), Points_Classement INT, Date_Naissance DATE, _ClassementMondial SMALLINT, #Id_Match, #Id_Pays_ISO);
+Ramasseur = (Id_Ramasseur VARCHAR(10), Nom_Ramasseur VARCHAR(50), Prenom_Ramasseur VARCHAR(50), Date_Naissance DATE, Date_Premier_Match DATE, #Id_Pays_ISO, #Id_Match, #Id_Staff);
+Billet = (#Id_Match, Id_Billet VARCHAR(15), Prix_Billet DOUBLE, Numéro_Siège_Billet SMALLINT, Type_Billet VARCHAR(15), Date_Billet DATE);
+S_ENTRAINER = (#Id_Joueur, #Id_Court, #Id_Entrainement);
+SE_DEROULE = (#Id_Court, #Id_Match);
+APPARTENIR = (#Id_Joueur, Points_Gagnés BYTE, #Id_Tableau);
+RESULTAT = (#Id_Match, Gagnant VARCHAR(50), Score_Match VARCHAR(30), #Id_Tableau);
+
+```
 
 ---
 
