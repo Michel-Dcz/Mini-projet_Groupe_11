@@ -74,7 +74,7 @@
 
 ---
 
-## 2. Modélisation (Étape 2)
+## 2. Modélisation (Étape 2 et Étape 3)
 
 ### Modèle Conceptuel des Données (MCD)
 
@@ -107,9 +107,65 @@ RESULTAT = (#Id_Match, Gagnant VARCHAR(50), Score_Match VARCHAR(30), #Id_Tableau
 
 ---
 
-## Contenu du Répertoir
+## 3. Scénarios d'utilisation (Étape 4 et Étape 5)
 
-* 'README.md' : Documentation, Règles Métier, Prompt, Dictionnaire et Image MCD.<br>
-* 'Looping_Mini-Projet.loo' : Fichier source Looping.<br>
-* 'MCD_Mini-Projet.png' : Image du Modèle.<br>
-* 'structure.sql' : Script SQL vide pour le moment.
+### Directeur Sportif de la Fédération
+
+**Rôle :** Le directeur sportif d'une fédération de tennis professionnelle utilise la base de données pour suivre l'organisation des tournois, analyser les performances des joueurs et préparer les prochaines compétitions.
+
+**Contexte :** En fin de saison, le directeur sportif doit produire un bilan complet des tournois disputés. Il a besoin de savoir quels joueurs ont performé, sur quelles surfaces les matchs ont été les plus longs, quels arbitres ont officié, et quels joueurs ne sont pas encore inscrits dans un tableau pour la prochaine édition.
+
+**Données extraites :**
+* **Top 10 :** Liste des joueurs classés dans le top 10 mondial, triés par classement.
+* **Grands Chelems :** Liste des tournois de type Grand Chelem.
+* **Surfaces :** Matchs joués sur Terre Battue ou Gazon, triés par heure de début.
+* **Filtres noms :** Joueurs dont le nom commence par une lettre donnée.
+* **Durée :** Matchs dont la durée est comprise entre 1h30 et 2h30.
+* **Stats surfaces :** Nombre de matchs joués par surface et durée moyenne par surface.
+* **Géographie :** Nombre de joueurs par pays (uniquement les pays avec au moins 3 joueurs).
+* **Points :** Points gagnés moyens et totaux par tableau.
+* **Localisation :** Matchs avec le nom de l'arbitre et la ville où ils se déroulent.
+* **Détails joueurs :** Joueurs avec leur pays et les points gagnés dans leur tableau.
+* **Résultats :** Gagnants des matchs avec le tournoi correspondant.
+* **Inscriptions :** Tous les joueurs, y compris ceux sans tableau assigné (`LEFT JOIN`).
+* **Absences :** Joueurs qui ne participent à aucun tableau (`NOT IN`).
+* **Niveau :** Joueurs ayant plus de points que la moyenne générale (sous-requête).
+* **Pays hôte :** Matchs disputés dans un court situé en France (`EXISTS`).
+* **Records :** Matchs dont la durée dépasse tous les matchs joués sur Gazon (`ALL`).
+
+<br>
+
+### Responsable billetterie  
+
+**Rôle :** Le responsable billetterie d'une organisation de tournois de tennis utilise la base de données pour analyser les ventes de billets, identifier les matchs les plus rentables et optimiser la politique tarifaire pour les prochaines éditions.
+
+**Contexte :** À chaque fin de tournoi, le responsable billetterie doit produire un rapport financier. Il analyse les recettes par tournoi, par mois, et par type de billet. Il identifie les matchs qui ont généré le plus de revenus et ceux pour lesquels aucun billet n'a été vendu, afin d'adapter la stratégie commerciale.
+
+**Données extraites :**
+* **Bilan financier :** Recettes totales, nombre de billets vendus et prix moyen par tournoi.
+* **Rentabilité :** Top 5 des matchs les plus rentables.
+* **Saisonnalité :** Billets vendus et recettes par mois sur l'année 2023.
+* **Optimisation :** Courts les plus rentables via les matchs qu'ils ont accueillis.
+* **Audit :** Matchs pour lesquels aucun billet n'a été vendu (`NOT EXISTS`).
+
+---
+
+## Contenu du Répertoire
+
+### Scripts SQL
+* **1_création.sql** : Script de création de la structure des tables.
+* **2_contraintes.sql** : Définition des clés étrangères et contraintes d'intégrité.
+* **3_insertion.sql** : Jeu de données de test.
+* **4_interrogation.sql** : Requêtes correspondant aux scénarios d'utilisation.
+* **5_test_vidéo.sql** : Scripts spécifiques pour la démonstration.
+* **structure.sql** : Vue d'ensemble de la base de données.
+
+### Modélisation et Conception
+* **mini-projet-tennis.png** (ou **MCD_Mini-Projet.png**) : Image du Modèle Conceptuel des Données.
+* **mini-projet-tennis.loo** : Fichier source Looping.
+* **Prompt_Conception_Base.docx** : Document détaillant la phase de réflexion initiale.
+* **Prompt_insertion_base.docx** : Instructions utilisées pour la génération des données.
+
+### Configuration
+* **.gitignore** : Fichiers à exclure du versionnage Git.
+* **README.md** : Documentation générale du projet.
